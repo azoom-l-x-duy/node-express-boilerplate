@@ -1,0 +1,44 @@
+{
+  "name": "express-boilerplate",
+  "version": "0.0.1",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-specifier-resolution=node --experimental-json-modules --loader ./helper/module-loader.js index.js",
+    "dev": "nodemon index.js --exec 'node --experimental-specifier-resolution=node --experimental-json-modules --loader ./helper/module-loader.js'"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-promise-router": "^4.1.1",
+    "glob": "^8.1.0",
+    "module-alias": "^2.2.2",
+    "statuses": "^2.0.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.4"
+  },
+  "_moduleAliases": {
+    "@root": "./",
+    "@routes": "./routes/",
+    "@middleware": "./middleware/",
+    "@config": "./config/"
+  },
+  "volta": {
+    "node": "18.12.1",
+    "yarn": "1.22.19"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
